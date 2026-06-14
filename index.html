@@ -4,74 +4,104 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Importancia de las Habilidades Blandas | Cristhian Navarro</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #0b1216;
+    --bg-2: #0f1a20;
+    --panel: #131f26;
+    --panel-2: #182832;
+    --teal: #1de9d6;
+    --teal-2: #0fb8ac;
+    --line: #1f323c;
+    --text-light: #d8e6e8;
+    --text-grey: #8aa0a6;
+  }
   body {
     font-family: 'Poppins', sans-serif;
-    background: #f4f7fb;
-    color: #2c3e50;
+    background: var(--bg);
+    color: var(--text-light);
     line-height: 1.7;
   }
 
   /* HEADER */
   .header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    padding: 60px 20px;
+    background: linear-gradient(135deg, #0a1518 0%, #0f2a30 60%, #103035 100%);
+    color: #fff;
+    padding: 80px 20px 70px;
     text-align: center;
     position: relative;
     overflow: hidden;
+    border-bottom: 1px solid var(--line);
   }
   .header::before {
     content: "";
     position: absolute;
-    top: -50px; right: -50px;
-    width: 200px; height: 200px;
-    background: rgba(255,255,255,0.1);
-    border-radius: 50%;
+    top: -100px; right: -100px;
+    width: 350px; height: 350px;
+    background: radial-gradient(circle, rgba(29,233,214,0.18) 0%, transparent 70%);
   }
   .header::after {
     content: "";
     position: absolute;
-    bottom: -80px; left: -80px;
-    width: 250px; height: 250px;
-    background: rgba(255,255,255,0.08);
-    border-radius: 50%;
+    bottom: -150px; left: -100px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(29,233,214,0.08) 0%, transparent 70%);
+  }
+  .logo-badge {
+    width: 64px; height: 64px;
+    margin: 0 auto 25px;
+    border-radius: 16px;
+    background: #0d1418;
+    border: 1px solid var(--line);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.8rem;
+    color: var(--teal);
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 10px 30px rgba(29,233,214,0.15);
   }
   .header h1 {
-    font-size: 2.8rem;
-    font-weight: 900;
-    margin-bottom: 15px;
+    font-size: 2.9rem;
+    font-weight: 800;
+    margin-bottom: 14px;
     position: relative;
     z-index: 2;
+    letter-spacing: -0.5px;
   }
+  .header h1 span { color: var(--teal); font-style: italic; font-weight: 600; }
   .header p {
-    font-size: 1.2rem;
-    opacity: 0.95;
+    font-size: 1.15rem;
+    color: var(--text-grey);
     position: relative;
     z-index: 2;
+    max-width: 600px;
+    margin: 0 auto;
   }
   .badge {
     display: inline-block;
-    background: rgba(255,255,255,0.2);
-    padding: 8px 20px;
+    background: rgba(29,233,214,0.08);
+    border: 1px solid rgba(29,233,214,0.3);
+    color: var(--teal);
+    padding: 8px 22px;
     border-radius: 30px;
-    margin-top: 20px;
-    font-size: 0.9rem;
-    backdrop-filter: blur(10px);
+    margin-top: 22px;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
     position: relative;
     z-index: 2;
   }
 
   /* AUTOR INFO */
   .autor-card {
-    background: white;
+    background: var(--panel);
     max-width: 900px;
-    margin: -40px auto 40px;
-    padding: 25px 35px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    margin: -40px auto 50px;
+    padding: 26px 35px;
+    border-radius: 16px;
+    border: 1px solid var(--line);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -80,9 +110,18 @@
     z-index: 10;
   }
   .autor-item { text-align: center; flex: 1; min-width: 150px; }
-  .autor-item .icon { font-size: 1.8rem; margin-bottom: 5px; }
-  .autor-item .label { font-size: 0.8rem; color: #999; text-transform: uppercase; letter-spacing: 1px; }
-  .autor-item .value { font-weight: 600; color: #2c3e50; margin-top: 3px; }
+  .autor-item .icon {
+    width: 38px; height: 38px;
+    margin: 0 auto 8px;
+    border-radius: 10px;
+    background: var(--panel-2);
+    border: 1px solid var(--line);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem;
+    color: var(--teal);
+  }
+  .autor-item .label { font-size: 0.72rem; color: var(--text-grey); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 600; }
+  .autor-item .value { font-weight: 600; color: #fff; margin-top: 4px; font-size: 1rem; }
 
   /* CONTAINER */
   .container {
@@ -93,104 +132,115 @@
 
   /* SECTION */
   .section {
-    background: white;
-    margin-bottom: 30px;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    background: var(--panel);
+    margin-bottom: 24px;
+    padding: 45px;
+    border-radius: 18px;
+    border: 1px solid var(--line);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.25);
   }
   .section h2 {
-    font-size: 2rem;
-    color: #764ba2;
-    margin-bottom: 20px;
-    padding-bottom: 12px;
-    border-bottom: 3px solid #667eea;
+    font-size: 1.9rem;
+    color: #fff;
+    margin-bottom: 22px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid var(--teal);
     display: inline-block;
+    font-weight: 700;
+    letter-spacing: -0.5px;
   }
   .section h3 {
-    color: #667eea;
-    margin: 20px 0 12px;
-    font-size: 1.3rem;
+    color: var(--teal);
+    margin: 22px 0 12px;
+    font-size: 1.2rem;
+    font-weight: 600;
   }
   .section p {
-    font-size: 1.05rem;
-    color: #555;
+    font-size: 1.02rem;
+    color: var(--text-grey);
     margin-bottom: 15px;
   }
+  .section strong { color: #fff; }
+  .section em { color: var(--teal); font-style: italic; }
 
   /* HERO IMAGE */
   .hero-image {
     width: 100%;
     max-height: 380px;
     object-fit: cover;
-    border-radius: 15px;
+    border-radius: 14px;
     margin: 20px 0;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    border: 1px solid var(--line);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
   }
 
   /* GRID */
   .grid-2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 25px;
+    gap: 30px;
     align-items: center;
     margin: 20px 0;
   }
-  .grid-2 img { width: 100%; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+  .grid-2 img {
+    width: 100%; border-radius: 14px;
+    border: 1px solid var(--line);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+  }
 
   /* CARDS HABILIDADES */
   .habilidades-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
+    gap: 18px;
     margin-top: 25px;
   }
   .hab-card {
-    background: linear-gradient(135deg, #f5f7fa 0%, #e9ecf3 100%);
-    padding: 25px 20px;
-    border-radius: 15px;
+    background: var(--panel-2);
+    padding: 28px 22px;
+    border-radius: 14px;
     text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-    border-top: 4px solid #667eea;
+    transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+    border: 1px solid var(--line);
   }
   .hab-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 30px rgba(102, 126, 234, 0.2);
+    transform: translateY(-6px);
+    box-shadow: 0 15px 30px rgba(29,233,214,0.15);
+    border-color: var(--teal);
   }
-  .hab-card .emoji { font-size: 3rem; margin-bottom: 10px; }
-  .hab-card h4 { color: #764ba2; margin-bottom: 8px; font-size: 1.1rem; }
-  .hab-card p { font-size: 0.9rem; color: #666; margin: 0; }
-
-  /* COLORES POR CARD */
-  .hab-card:nth-child(1) { border-top-color: #ff6b6b; }
-  .hab-card:nth-child(2) { border-top-color: #feca57; }
-  .hab-card:nth-child(3) { border-top-color: #48dbfb; }
-  .hab-card:nth-child(4) { border-top-color: #1dd1a1; }
-  .hab-card:nth-child(5) { border-top-color: #5f27cd; }
-  .hab-card:nth-child(6) { border-top-color: #ff9ff3; }
-  .hab-card:nth-child(7) { border-top-color: #54a0ff; }
-  .hab-card:nth-child(8) { border-top-color: #ee5a6f; }
-  .hab-card:nth-child(9) { border-top-color: #00d2d3; }
-  .hab-card:nth-child(10) { border-top-color: #f368e0; }
+  .hab-card .emoji {
+    font-size: 1.6rem;
+    margin-bottom: 14px;
+    width: 54px; height: 54px;
+    line-height: 54px;
+    margin-left: auto; margin-right: auto;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--teal) 0%, var(--teal-2) 100%);
+    color: #0b1216;
+  }
+  .hab-card h4 { color: #fff; margin-bottom: 8px; font-size: 1.05rem; font-weight: 600; }
+  .hab-card p { font-size: 0.9rem; color: var(--text-grey); margin: 0; }
 
   /* CALLOUT */
   .callout {
-    background: linear-gradient(135deg, #fff3cd 0%, #ffe0b2 100%);
-    border-left: 5px solid #ff9800;
-    padding: 20px 25px;
+    background: var(--panel-2);
+    border-left: 4px solid var(--teal);
+    padding: 22px 26px;
     border-radius: 10px;
     margin: 20px 0;
   }
-  .callout strong { color: #e65100; }
+  .callout strong { color: var(--teal); }
 
   .callout-blue {
-    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
-    border-left: 5px solid #2196f3;
-    padding: 20px 25px;
+    background: linear-gradient(135deg, #0e2329 0%, #103035 100%);
+    color: var(--text-light);
+    border-left: 4px solid var(--teal);
+    padding: 24px 28px;
     border-radius: 10px;
     margin: 20px 0;
+    border: 1px solid var(--line);
   }
-  .callout-blue strong { color: #1565c0; }
+  .callout-blue strong { color: var(--teal); }
 
   /* LISTA BONITA */
   .check-list {
@@ -198,18 +248,19 @@
     padding: 0;
   }
   .check-list li {
-    padding: 10px 0 10px 35px;
+    padding: 12px 0 12px 38px;
     position: relative;
-    border-bottom: 1px dashed #e0e0e0;
+    border-bottom: 1px solid var(--line);
+    color: var(--text-grey);
   }
   .check-list li:last-child { border-bottom: none; }
   .check-list li::before {
-    content: "✔";
+    content: "▹";
     position: absolute;
     left: 0;
-    color: #1dd1a1;
-    font-weight: bold;
-    font-size: 1.3rem;
+    color: var(--teal);
+    font-weight: 700;
+    font-size: 1.2rem;
   }
 
   /* COMPARACIÓN */
@@ -220,43 +271,60 @@
     margin: 25px 0;
   }
   .vs-box {
-    padding: 25px;
-    border-radius: 15px;
-    color: white;
+    padding: 28px;
+    border-radius: 14px;
+    color: #fff;
+    border: 1px solid var(--line);
   }
-  .vs-box h4 { font-size: 1.3rem; margin-bottom: 10px; }
-  .vs-box.hard { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
-  .vs-box.soft { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); }
-  .vs-box ul { padding-left: 20px; margin-top: 10px; }
-  .vs-box li { margin-bottom: 5px; }
+  .vs-box h4 { font-size: 1.2rem; margin-bottom: 12px; font-weight: 600; }
+  .vs-box p { color: var(--text-grey); }
+  .vs-box.hard { background: var(--panel-2); }
+  .vs-box.soft { background: linear-gradient(135deg, #0e2329 0%, #0fb8ac 130%); }
+  .vs-box ul { padding-left: 20px; margin-top: 12px; color: var(--text-light); }
+  .vs-box li { margin-bottom: 6px; }
+  .vs-box.hard h4 { color: var(--text-grey); }
+  .vs-box.soft h4 { color: var(--teal); }
 
   /* CONCLUSIÓN */
   .conclusion-box {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    padding: 40px;
-    border-radius: 20px;
+    background: linear-gradient(135deg, #0a1518 0%, #103035 100%);
+    color: #fff;
+    padding: 50px;
+    border-radius: 18px;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--line);
   }
-  .conclusion-box h2 { color: white; border-bottom-color: rgba(255,255,255,0.5); }
-  .conclusion-box p { color: rgba(255,255,255,0.95); font-size: 1.1rem; }
+  .conclusion-box::before {
+    content: "";
+    position: absolute;
+    top: -100px; right: -100px;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(29,233,214,0.18) 0%, transparent 70%);
+  }
+  .conclusion-box h2 { color: #fff; border-bottom-color: rgba(29,233,214,0.4); position: relative; z-index: 2; }
+  .conclusion-box p { color: var(--text-grey); font-size: 1.05rem; position: relative; z-index: 2; }
+  .conclusion-box strong { color: var(--teal); }
 
   /* FOOTER */
   .footer {
     text-align: center;
-    padding: 30px;
-    background: #2c3e50;
-    color: white;
+    padding: 35px;
+    background: #070d10;
+    color: var(--text-grey);
     margin-top: 40px;
+    border-top: 1px solid var(--line);
   }
   .footer p { margin: 5px 0; }
+  .footer strong { color: var(--teal); }
 
   /* RESPONSIVE */
   @media (max-width: 768px) {
     .header h1 { font-size: 2rem; }
     .grid-2 { grid-template-columns: 1fr; }
     .vs-grid { grid-template-columns: 1fr; }
-    .section { padding: 25px; }
+    .section { padding: 28px; }
   }
 </style>
 </head>
@@ -264,9 +332,10 @@
 
 <!-- HEADER -->
 <header class="header">
-  <h1>💡 Habilidades Blandas</h1>
+  <div class="logo-badge">OTEIMA C.N</div>
+  <h1>Habilidades <span>Blandas</span></h1>
   <p>¿Por qué son tan importantes en la vida y el trabajo?</p>
-  <div class="badge">📚 Universidad OTEIMA · 2026</div>
+  <div class="badge">UNIVERSIDAD OTEIMA · 2026</div>
 </header>
 
 <!-- AUTOR CARD -->
@@ -297,7 +366,7 @@
 
   <!-- INTRO -->
   <section class="section">
-    <h2>🌟 ¿Qué son las Habilidades Blandas?</h2>
+    <h2>¿Qué son las Habilidades Blandas?</h2>
     <img src="https://sspark.genspark.ai/cfimages?u1=iU%2FesvdeHOe8ijvsOaRkEQRu8HuTJMLOPIHj6r2PBfP6NPL%2Bczpo%2B9uB1qd2fBJ%2BZ7ifORCWq3Ikew56Zh6Rtzz0TNjZ4vv99dY4pLDgvkm4wTOxNiq6uJRE%2FBQp1crxIgSZzU4bcpt9&u2=HHEGl8taO6%2FftelO&width=2560" alt="Habilidades blandas" class="hero-image">
     <p>
       Las <strong>habilidades blandas</strong> (o <em>soft skills</em>) son básicamente todo eso que nos hace
@@ -315,14 +384,14 @@
       <li><strong>Habilidades interpersonales</strong> – Conectar de verdad con la gente.</li>
     </ul>
     <div class="callout">
-      <strong>💬 En pocas palabras:</strong> son el "saber ser" y el "saber convivir". Lo que te diferencia
+      <strong>En pocas palabras:</strong> son el "saber ser" y el "saber convivir". Lo que te diferencia
       del resto cuando los conocimientos técnicos ya los tiene todo el mundo.
     </div>
   </section>
 
   <!-- INTELIGENCIA EMOCIONAL -->
   <section class="section">
-    <h2>❤️ Su Relación con la Inteligencia Emocional</h2>
+    <h2>Su Relación con la Inteligencia Emocional</h2>
     <div class="grid-2">
       <div>
         <p>
@@ -348,14 +417,14 @@
 
   <!-- POR QUÉ IMPORTAN -->
   <section class="section">
-    <h2>🚀 ¿Por qué son tan importantes hoy?</h2>
+    <h2>¿Por qué son tan importantes hoy?</h2>
     <p>
       Vivimos en un mundo donde la <strong>tecnología, la inteligencia artificial y los robots</strong> están
       tomando cada vez más tareas técnicas. Entonces, ¿qué nos queda a las personas? Pues justamente
       esto: lo humano.
     </p>
     <div class="callout-blue">
-      <strong>🤖 Dato clave:</strong> Mientras más automatizado se vuelve el trabajo, más valoran las
+      <strong>Dato clave:</strong> Mientras más automatizado se vuelve el trabajo, más valoran las
       empresas a personas que sepan comunicarse, adaptarse y trabajar en equipo. Las soft skills
       <strong>cierran la brecha</strong> entre lo que enseña la escuela y lo que pide el mercado laboral.
     </div>
@@ -369,11 +438,11 @@
 
   <!-- HARD VS SOFT -->
   <section class="section">
-    <h2>⚖️ Hard Skills vs Soft Skills</h2>
+    <h2>Hard Skills vs Soft Skills</h2>
     <p>Para que quede claro, esta es la diferencia:</p>
     <div class="vs-grid">
       <div class="vs-box hard">
-        <h4>🔧 Hard Skills (Duras)</h4>
+        <h4>Hard Skills (Duras)</h4>
         <p>Las técnicas, las que se miden con diplomas.</p>
         <ul>
           <li>Manejar Excel o programas</li>
@@ -383,7 +452,7 @@
         </ul>
       </div>
       <div class="vs-box soft">
-        <h4>💖 Soft Skills (Blandas)</h4>
+        <h4>Soft Skills (Blandas)</h4>
         <p>Las humanas, las que te hacen único.</p>
         <ul>
           <li>Comunicación efectiva</li>
@@ -397,7 +466,7 @@
 
   <!-- TIPOS DE HABILIDADES -->
   <section class="section">
-    <h2>🧠 Las Habilidades Blandas más Valoradas</h2>
+    <h2>Las Habilidades Blandas más Valoradas</h2>
     <p>Estas son las que las empresas buscan como oro:</p>
     <div class="habilidades-grid">
       <div class="hab-card">
@@ -455,7 +524,7 @@
 
   <!-- IMAGEN INSPIRACIONAL -->
   <section class="section">
-    <h2>👔 Liderazgo y Trabajo en Equipo</h2>
+    <h2>Liderazgo y Trabajo en Equipo</h2>
     <img src="https://sspark.genspark.ai/cfimages?u1=nwB3c5VqjBtgvOX5XVCHM1UYhArVWDGDo4koTH0G%2FppecjMSAV6Oz2zpsCiRyAaQRGvZxQRl1ew50EEh1npvAzN1YnX4spWDYjoq%2F3573fcQLE0H&u2=UBCl0cjDVlWfVTZX&width=2560" alt="Equipo de trabajo" class="hero-image">
     <p>
       Un buen equipo de trabajo no es solo gente reunida en una oficina. Es un grupo de personas
@@ -466,7 +535,7 @@
 
   <!-- ¿CÓMO DESARROLLARLAS? -->
   <section class="section">
-    <h2>🌱 ¿Cómo se Desarrollan?</h2>
+    <h2>¿Cómo se Desarrollan?</h2>
     <p>
       A diferencia de las habilidades técnicas, las blandas <strong>requieren ganas y voluntad</strong>.
       No basta con leer un libro: hay que practicarlas todos los días y, muchas veces, dejar atrás
@@ -483,7 +552,7 @@
 
   <!-- CONCLUSIÓN -->
   <section class="conclusion-box">
-    <h2>🎯 Conclusión</h2>
+    <h2>Conclusión</h2>
     <p>
       Las habilidades blandas <strong>ya no son un extra</strong>, son lo que marca la diferencia entre un
       buen profesional y uno excelente. En un mundo donde la tecnología avanza a toda velocidad,
@@ -491,7 +560,7 @@
     </p>
     <p style="margin-top:15px;">
       Así que invertir en ti, en cómo te comunicas, cómo manejas tus emociones y cómo trabajas con
-      los demás, es la mejor inversión que puedes hacer para tu carrera y tu vida. 🚀
+      los demás, es la mejor inversión que puedes hacer para tu carrera y tu vida.
     </p>
   </section>
 
@@ -499,10 +568,10 @@
 
 <!-- FOOTER -->
 <footer class="footer">
-  <p>📘 <strong>Análisis del documento:</strong> Habilidades Blandas, ¿Son Importantes?</p>
-  <p>✍️ Realizado por <strong>Cristhian Navarro</strong></p>
-  <p>🎓 Universidad OTEIMA · 2026</p>
-  <p style="margin-top:15px; opacity:0.7; font-size:0.85rem;">Hecho con 💜 para compartir el aprendizaje</p>
+  <p><strong>Análisis del documento:</strong> Habilidades Blandas, ¿Son Importantes?</p>
+  <p>Realizado por <strong>Cristhian Navarro</strong></p>
+  <p>Universidad OTEIMA · 2026</p>
+  <p style="margin-top:15px; opacity:0.7; font-size:0.85rem;"></p>
 </footer>
 
 </body>
